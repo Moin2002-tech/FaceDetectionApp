@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props" Condition="Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props')" />
+  <Import Project="packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props" Condition="Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{40493e76-cd0a-47d5-9ff3-4148691f75c7}</ProjectGuid>
+    <RootNamespace>FeatureDetection1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Feature_Detection1\Classification\AgeBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ConfidenceBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\FrameBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\IImg.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticTwoStageClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticWvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\RvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\RvmProbabilisticClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\SvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\TrainableProbabilisticSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\TrainableSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\UnlimitedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\VectorbasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\VectorMachineClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\WvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\AdaptiveCondensationTracker.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\ClassificationBasedStateValidator.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\CondensationTracker.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\ExtentedHogBasedMeasurementModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\FilteringClassifierModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\FilteringStateExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\GridSampler.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\LowVarianceSampling.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\MaxWeightedStateExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\OpticalFlowTransitionModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\PartiallyAdaptiveCondensationTracker.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\PositionDependentMeasurementModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\ResamplingSampler.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\Sample.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\SelfLearningMeasurementModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\SimpleTransitionModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\SingleClassifierModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\WeightedMeanStateExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\Condensation\WvmSvmModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Detection\AggregatedFeaturesDetector.cpp" />
+    <ClCompile Include="Feature_Detection1\Detection\FiveStageSlidingWindowDetector.cpp" />
+    <ClCompile Include="Feature_Detection1\Detection\NonMaximumSuppression.cpp" />
+    <ClCompile Include="Feature_Detection1\Detection\OverlapElimination.cpp" />
+    <ClCompile Include="Feature_Detection1\Detection\SlidingWindowDetector.cpp" />
+    <ClCompile Include="Feature_Detection1\FaceTrackingApp\FaceTrackingApp.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\BobotLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\BobotLandmarkSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\CameraImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DefaultNamedLandmarkSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DidLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DidLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DirectoryImageSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DirectoryImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\DlibImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\FddbLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\FileImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\FileListImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\IbugLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\KinectImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\LandmarkCollection.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\LandmarkFileGatherer.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\LandmarkMapper.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\LfpwLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\LstLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\ModelLandmark.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\MuctLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\NamedLabeledImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\OrderedLabeledImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\PascStillEyesLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\RectLandmark.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\RectLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\RepeatingFileImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\SimpleModelLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\SimpleModelLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\SimpleRectLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\SingleLandmarkSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\SingleLandmarkSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\TlmsLandmarkFormatParser.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\VideoImageSink.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageIO\VideoImageSource.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageLogging\ConsoleAppenders.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageLogging\ImageFileWriter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageLogging\ImageLogger.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageLogging\ImageLoggerFactory.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageLogging\ImageLoggerFunctionsFromOldLogger.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\CachingFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\CachingPyramidFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\CellBasedPyramidFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ChainedFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ColorBiningFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ColorChannelFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ColorSpaceConversionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\CompleteExtendedHogFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ConversionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ConvolutionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\DirectImageFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\DirectPyramidFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ExtendedHogFeatureExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ExtentedHogFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Extraction\AggregatedExtractionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\AggregationFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\BgrToLuvConverter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\BoxConvolutionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\ChannelExtractor.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\FhogAggregationFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\FhogFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\FilterTree.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\FpdwFeatureFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\GradientFiltering.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\GradientHistogramFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\GradientMagnitudeFiltering.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\GradientOrientationFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\HistogramFiltering.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Filtering\TriangularConvolutionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GammaCorrectionFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GradientChannelFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GradientFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GradientMagnitudeFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GradientSumFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GrayScaleFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\GreyWorldNormalizationFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\HaarFeatureFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\HistEq64Filter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\HistogramEqualizationFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\HistogramFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\HogFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ImagePyramid.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\IntegralChannelFeatureFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\IntegralChannelHistogramFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\IntegralGradientFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\IntegralImageFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\LbpFilter25.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ParallelFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\PyramidHogFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ReshapingFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ResizingFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\SpatialHistogramFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\SpatialPyramidHistogramFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\UnitNormFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\Version.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\WhiteningFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\ImageProcessing\ZeroMeanUnitVarianceFilter.cpp" />
+    <ClCompile Include="Feature_Detection1\Linear\Linear.cpp" />
+    <ClCompile Include="Feature_Detection1\Linear\LinearClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Linear\LinearUtils.cpp" />
+    <ClCompile Include="Feature_Detection1\Linear\Tron.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\ConsoleAppender.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\FileAppender.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\Logger.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\LoggerFactory.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\Hdf5Utils.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\MorphableModel.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\pcaModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Camera.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\MatrixUtils.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Mesh.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\MeshUtil.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\QopenGlRender.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\SoftwareRenderer.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Texture.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Triangle.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Utils.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Vertex.cpp" />
+    <ClCompile Include="Feature_Detection1\Svm\svm.cpp" />
+    <ClCompile Include="Feature_Detection1\Svm\libSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Svm\SvmUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Feature_Detection1\Classification\AgeBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\BinaryClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ConfidenceBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\EmptyExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\FixedTrainableProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\FrameBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\HistogramIntersectionKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\IImg.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\Kernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\KernelVisitor.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\LinearKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\MatReader.h" />
+    <ClInclude Include="Feature_Detection1\Classification\PolynomialKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticTwoStageClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticWvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RbfKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RvmProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\SvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableBinaryClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticTwoStageClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\UnlimitedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\VectorBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\VectorMachineClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\WvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\AdaptiveCondensationTracker.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\AdaptiveMeasurementModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\ClassificationBasedStateValidator.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\CondensationTracker.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\ExtentedHogBasedMeasurementModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\FilteringClassifierModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\FilteringStateExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\GridSampler.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\LowVarianceSampling.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\MaxWeightStateExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\MeasurementModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\OpticalFlowTransitionModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\PartiallyAdaptiveCondensationTracker.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\PositionDependentMeasurementModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\ResamplingAlgorithm.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\ResamplingSampler.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\Sample.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\Sampler.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\SelfLearningMeasurementModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\SimpleTransitionModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\SingleClassifierModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\StateExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\StateValidator.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\TransitionModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\WeightedMeanStateExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\Condensation\WvmSvmModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\AggregatedFeaturesDetector.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\ClassifiedPatch.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\Detector.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\FiveStageSlidingWindowDetector.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\NonMaximumSuppression.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\OverlapElimination.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\SimpleDetector.hpp" />
+    <ClInclude Include="Feature_Detection1\Detection\SlidingWindowDetector.hpp" />
+    <ClInclude Include="Feature_Detection1\FaceTrackingApp\FaceTrackingApp.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\BobotLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\BobotLandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\CameraImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DefaultNamedLandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DidLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DidLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DirectoryImageSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DirectoryImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\DlibImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\EmptyLandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\FddbLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\FileImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\FileListImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\IbugLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\ImageSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\ImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\KinectImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LabeledImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\Landmark.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarkCollection.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarkFileGatherer.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarkMapper.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarksHelper.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LfpwLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\LstLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\ModelLandmark.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\MuctLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\NamedLabeledImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\NamedLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\NamedLandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\OrderedLabeledImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\OrderedLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\PascStillEyesLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\RectLandmark.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\RectLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\RepeatingFileImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\SimpleModelLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\SimpleModelLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\SimpleRectLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\SingleLandmarkSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\SingleLandmarkSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\TlmsLandmarkFormatParser.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\VideoImageSink.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageIO\VideoImageSource.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\Appender.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\ConsoleAppenders.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\DrawUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\ImageFileWriter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\ImageLogger.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\ImageLoggerFactory.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\ImageLoggerFunctionsFromOldLogger.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageLogging\imageloglevels.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\BiningFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\CachingFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\CachingPyramidFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\CellBasedPyramidFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ChainedFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ColorBiningFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ColorChannelFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ColorSpaceConversionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\CompleteExtendedHogFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ConversionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ConvolutionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\DirectImageFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\DirectPyramidFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ExtendedHogFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ExtendedHogFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Extraction\AggregatedExtractionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\FeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\FilteringFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\AggregationFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\BgrToLuvConverter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\BoxConvolutionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\ChannelExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\FhogAggregationFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\FhogFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\FilterTree.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\FpdwFeatureFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\GradientFiltering.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\GradientHistogramFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\GradientMagnitudeFiltering.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\GradientOrientationFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\HistogramFiltering.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Filtering\TriangularConvolutionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\FilterPyramidFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GammaCorrectionFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GradientBiningFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GradientChannelFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GradientFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GradientMagnitudeFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GradientSumFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GrayScaleFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\GreyWorldNormalizationFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\HaarFeatureFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\HistoEq64Filter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\HistogramEquilizationFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\HistogramFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\HogFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ImageFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ImagePyramid.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ImagePyramidLayer.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\IntegralChannelFeatureFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\IntegralChannelHistogramFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\IntegralFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\IntegralGradientFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\IntegralImageFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\LbpFilter25.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ParallelFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Patch.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\PatchResizingFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\PyramidFeatureExtractor.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\PyramidHogFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ReshapingFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ResizingFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\SpatialHistogramFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\SpatialPyramidHistogramFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\UnitNormFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\Version.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\VersionedImage.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\WhiteningFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\ImageProcessing\ZeroMeanVarianceFilter.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\Linear.h" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearCPP\LinearClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearCPP\LinearUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\Tron.h" />
+    <ClInclude Include="Feature_Detection1\logging\Appender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\ConsoleAppender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\FileAppender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\Logger.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\LoggerFactory.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\LogLevels.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\Hdf5Utils.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\MorphableModel.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\pcaModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Camera.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\MatrixUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Mesh.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\MeshUtil.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\QopenGLRenderer.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\SoftwareRenderer.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Texture.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Triangle.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Utils.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Vertex.hpp" />
+    <ClInclude Include="Feature_Detection1\Svm\svm.h" />
+    <ClInclude Include="Feature_Detection1\Svm\libSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Svm\SvmKernelParamSetter.hpp" />
+    <ClInclude Include="Feature_Detection1\Svm\SvmUtils.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets" Condition="Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets')" />
+    <Import Project="packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets" Condition="Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props'))" />
+    <Error Condition="!Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets'))" />
+    <Error Condition="!Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props'))" />
+    <Error Condition="!Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets'))" />
+  </Target>
+</Project>

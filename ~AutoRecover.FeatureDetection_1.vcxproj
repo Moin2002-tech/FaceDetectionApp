@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props" Condition="Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props')" />
+  <Import Project="packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props" Condition="Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{40493e76-cd0a-47d5-9ff3-4148691f75c7}</ProjectGuid>
+    <RootNamespace>FeatureDetection1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\fashion-mnist_test.csv" />
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\fashion-mnist_train.csv" />
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\t10k-images-idx3-ubyte" />
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\t10k-labels-idx1-ubyte" />
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\train-images-idx3-ubyte" />
+    <None Include="Feature_Detection1\DATA\FASHION MNIST\train-labels-idx1-ubyte" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Feature_Detection1\Classification\AgeBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ConfidenceBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\FrameBasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\IImg.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticTwoStageClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\ProbabilisticWvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\RvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\RvmProbabilisticClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\SvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\TrainableProbabilisticSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\TrainableSvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\UnlimitedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\VectorbasedExampleManagement.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\VectorMachineClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\Classification\WvmClassifier.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\ConsoleAppender.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\FileAppender.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\Logger.cpp" />
+    <ClCompile Include="Feature_Detection1\logging\LoggerFactory.cpp" />
+    <ClCompile Include="Feature_Detection1\mainExecution.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\Hdf5Utils.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\MorphableModel.cpp" />
+    <ClCompile Include="Feature_Detection1\MorphableModel\pcaModel.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Camera.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\MatrixUtils.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Mesh.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\MeshUtil.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\QopenGlRender.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\SoftwareRenderer.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Texture.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Triangle.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Utils.cpp" />
+    <ClCompile Include="Feature_Detection1\Render\Vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Feature_Detection1\Classification\AgeBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\BinaryClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ConfidenceBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\EmptyExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\FixedTrainableProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\FrameBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\HistogramIntersectionKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\IImg.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\Kernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\KernelVisitor.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\LinearKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\MatReader.h" />
+    <ClInclude Include="Feature_Detection1\Classification\PolynomialKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticTwoStageClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\ProbabilisticWvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RbfKernel.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\RvmProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\SvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableBinaryClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableProbabilisticTwoStageClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\TrainableSvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\UnlimitedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\VectorBasedExampleManagement.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\VectorMachineClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Classification\WvmClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearCPP\LinearClassifier.hpp" />
+    <ClInclude Include="Feature_Detection1\Linear\LinearCPP\LinearUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\Appender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\ConsoleAppender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\FileAppender.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\Logger.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\LoggerFactory.hpp" />
+    <ClInclude Include="Feature_Detection1\logging\LogLevels.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\Hdf5Utils.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\MorphableModel.hpp" />
+    <ClInclude Include="Feature_Detection1\MorphableModel\pcaModel.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Camera.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\MatrixUtils.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Mesh.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\MeshUtil.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\QopenGLRenderer.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\SoftwareRenderer.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Texture.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Triangle.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Utils.hpp" />
+    <ClInclude Include="Feature_Detection1\Render\Vertex.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Feature_Detection1\Image\IMG_20230705_143703.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets" Condition="Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets')" />
+    <Import Project="packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets" Condition="Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.props'))" />
+    <Error Condition="!Exists('packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.D.dev.vcpkg.1.0.0\build\native\vcpkg.D.dev.vcpkg.targets'))" />
+    <Error Condition="!Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.props'))" />
+    <Error Condition="!Exists('packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\vcpkg.H.dev.vcpkg.1.0.0\build\native\vcpkg.H.dev.vcpkg.targets'))" />
+  </Target>
+</Project>
