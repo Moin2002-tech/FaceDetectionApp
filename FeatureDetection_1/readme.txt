@@ -1,2 +1,0 @@
-/*Moin Shaikh*/
-/*Hello World*/
